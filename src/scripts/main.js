@@ -31,7 +31,7 @@ function escondeTodasAbas() {
     }
 }
 
-// Função auxiliar para remover a linha preta sob o botão ativo
+// Função auxiliar para remover a linha sob o botão ativo
 function removeBotaoAtivo() {
     const buttons = document.querySelectorAll('[data-tab-button]');
     
@@ -47,4 +47,4 @@ function abreOuFechaResposta(elemento) {
     const elementoPai = elemento.target.parentNode;
 
     elementoPai.classList.toggle(classeItemAberto);
-}
+} // <--- Chave que estava faltando para fechar a função!
