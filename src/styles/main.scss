@@ -1,0 +1,649 @@
+/* ==========================================================================
+    VARIÁVEIS (Cores do Tema Bazinga+ / The Big Bang Theory)
+   ========================================================================== */
+$color-bg: #090b13;            /* Azul escuro profundo (estilo streaming) */
+$color-card-bg: #1a1d29;       /* Fundo dos cards */
+$color-text: #f9f9f9;          /* Texto principal claro */
+$color-text-secondary: #a0a3b1; /* Texto secundário/descrições */
+$color-primary: #ffcc00;       /* Amarelo Bazinga (Destaques e Botões) */
+$color-primary-hover: #e6b800; /* Amarelo no Hover */
+$color-border: #31343e;        /* Bordas dos cards */
+
+// 1. Importação das fontes direto do Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Impact&display=swap');
+
+// 2. Aplicação das fontes nas classes do seu projeto
+body {
+    font-family: 'Arial', sans-serif; 
+}
+
+// Títulos Principais
+.title--big, 
+.hero .hero__content h2, 
+.header__logo {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+// Subtítulos e Elementos Científicos
+.title--small,
+.link-text,
+.faq__questions__item__question,
+.plans__list__item div,
+.available-devices .title--small {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+    RESET PADRÃO
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: $color-bg;
+    color: $color-text;
+    padding: 40px 20px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+    COMPONENTES GERAIS (Botões e Títulos)
+   ========================================================================== */
+.button {
+    display: inline-block;
+    padding: 10px 20px; /* Reduzido levemente para o menu superior ficar elegante */
+    font-size: 0.85rem;  /* Ajustado para não brigar com o logotipo */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: $color-primary;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: $color-primary-hover;
+        transform: scale(1.02);
+    }
+
+    &--secondary {
+        background-color: transparent;
+        color: $color-primary;
+        border: 1px solid $color-text;
+
+        &:hover {
+            background-color: $color-primary;
+            color: #000000;
+        }
+    }
+
+    &--dark {
+        background-color: rgba(255, 255, 255, 0.08); /* Mais suave e integrado ao fundo */
+        color: #e90707;
+        border: 1px solid $color-border;
+
+        &:hover {
+            background-color: #e90707;
+            color: #000000;
+        }
+    }
+}
+
+.title--big {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: $color-text;
+}
+
+.title--small {
+    font-size: 1.5rem;
+    color: $color-text;
+    margin-bottom: 16px;
+}
+
+.text--big {
+    font-size: 1.1rem;
+    color: $color-text-secondary;
+}
+
+.text--small {
+    font-size: 0.8rem;
+    color: #626674;
+}
+
+.centralized-titles {
+    text-align: center;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* ==========================================================================
+    HEADER (ESTILIZADO E REFINADO)
+   ========================================================================== */
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(9, 11, 19, 0.75); /* Mais transparente para o efeito de vidro */
+    backdrop-filter: blur(12px);              /* Efeito blur moderno no fundo do menu */
+    border-bottom: 1px solid rgba(49, 52, 62, 0.5);
+    z-index: 100;
+    padding: 14px 40px;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        color: $color-primary;
+        font-size: 1.5rem;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        
+        &--red {
+            color: #e90707; /* O "Theory" em vermelho destacado */
+        }
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        list-style: none;
+    }
+}
+
+/* ==========================================================================
+    HERO SECTION
+   ========================================================================== */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px 40px 40px 40px;
+    margin-top: 60px;
+    background-image: linear-gradient(to right, #090b13 40%, transparent), url('./images/bing bang.jpg');
+    background-size: cover;
+    background-position: center;
+
+    &__content {
+        max-width: 550px;
+
+        p {
+            margin: 20px 0;
+        }
+
+        .link-text {
+            color: $color-primary;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.2rem;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &__combos {
+            list-style: none;
+            margin: 24px 0;
+
+            &__combo {
+                display: grid;
+                grid-template-columns: 120px 1fr auto;
+                align-items: center;
+                gap: 16px;
+                background-color: rgba(26, 29, 41, 0.8);
+                padding: 12px;
+                border-radius: 8px;
+                margin-bottom: 12px;
+                border: 1px solid $color-border;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+    TAB SHOWS SECTION
+   ========================================================================== */
+.shows {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        border-bottom: 2px solid $color-border;
+        margin-bottom: 32px;
+        width: 100%;
+        max-width: 800px;
+
+        &__button {
+            background: none;
+            border: none;
+            color: $color-text-secondary;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 12px 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.2s;
+
+            &:hover {
+                color: $color-text;
+            }
+
+            &--is-active {
+                color: $color-primary;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__list {
+        display: none;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 16px;
+        list-style: none;
+        width: 100%;
+
+        &--is-active {
+            display: grid;
+        }
+
+        &__item {
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 2px solid transparent;
+            background-color: $color-card-bg;
+            transition: all 0.2s ease-in-out;
+            aspect-ratio: 2 / 3;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover {
+                border-color: $color-primary;
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+
+                img {
+                    transform: scale(1.08);
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+    PLANS SECTION
+   ========================================================================== */
+.plans {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        list-style: none;
+        margin-bottom: 24px;
+
+        &__item {
+            background-color: $color-card-bg;
+            border: 1px solid $color-border;
+            border-radius: 8px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+
+            img {
+                height: 40px;
+                object-fit: contain;
+            }
+
+            p {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+    IMAGE TEXT SECTION
+   ========================================================================== */
+.image-text-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 1200px;
+    margin: 80px auto;
+    gap: 40px;
+    padding: 0 20px;
+
+    img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    &__text_container {
+        .title {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+    }
+
+    &--image-full-width {
+        grid-template-columns: 1fr;
+        position: relative;
+        text-align: center;
+
+        picture img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            filter: brightness(0.5);
+        }
+
+        &__text_container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+        }
+    }
+}
+
+/* ==========================================================================
+    AVAILABLE DEVICES SECTION
+   ========================================================================== */
+.available-devices {
+    max-width: 1200px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 0 20px;
+
+    .title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        list-style: none;
+
+        &__item {
+            background-color: $color-card-bg;
+            border: 1px solid $color-border;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                height: 160px;
+                object-fit: cover;
+                border-radius: 6px;
+                margin-bottom: 16px;
+            }
+
+            h4 {
+                margin-top: auto;
+                margin-bottom: 12px;
+            }
+
+            .text {
+                list-style: none;
+                margin-top: 4px;
+                color: $color-text-secondary;
+                font-size: 0.9rem;
+                text-align: center;
+                width: 100%;
+                
+                li {
+                    margin-bottom: 6px;
+                    padding: 4px 0;
+                    border-bottom: 1px dashed rgba(49, 52, 62, 0.4);
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+    FAQ SECTION
+   ========================================================================== */
+.faq {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 20px;
+
+    .title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    &__questions {
+        list-style: none;
+
+        &__item {
+            background-color: $color-card-bg;
+            margin-bottom: 16px;
+            border-radius: 4px;
+            border: 1px solid $color-border;
+            overflow: hidden;
+
+            &__question {
+                padding: 24px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &::after {
+                    content: '+';
+                    font-size: 1.5rem;
+                    color: $color-primary;
+                }
+            }
+
+            &__answer {
+                padding: 0 24px 24px 24px;
+                color: $color-text-secondary;
+                display: none;
+            }
+            
+            &--is-open {
+                .faq__questions__item__question::after {
+                    content: '-';
+                }
+                .faq__questions__item__answer {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+    FOOTER
+   ========================================================================== */
+.footer {
+    background-color: #0e111d;
+    padding: 40px 20px;
+    border-top: 1px solid $color-border;
+    text-align: center;
+
+    &__container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px 24px;
+        list-style: none;
+
+        &__item a {
+            color: $color-text-secondary;
+            text-decoration: none;
+            
+            &:hover {
+                color: $color-text;
+            }
+        }
+    }
+
+    .language-selector select {
+        background-color: #1a1d29;
+        color: $color-text;
+        border: 1px solid $color-border;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+/* ==========================================================================
+    RESPONSIVIDADE (Media Queries)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .shows__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .plans__list {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto 24px auto;
+    }
+    .available-devices__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 20px;
+        
+        &__container {
+            flex-direction: column; /* Alinha logo e botões um sob o outro no mobile */
+            gap: 12px;
+        }
+        
+        &__logo {
+            font-size: 1.3rem;
+        }
+    }
+    
+    .hero {
+        background-image: linear-gradient(to top, #090b13 50%, rgba(9, 11, 19, 0.4)), url('https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=768&q=80');
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .image-text-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .available-devices__list {
+        grid-template-columns: 1fr;
+    }
+
+    .shows__tabs {
+        flex-direction: column !important;
+        align-items: center !important;
+        border-bottom: none !important;
+        gap: 8px;
+
+        .shows__tabs__button {
+            display: block !important;
+            width: 100% !important;
+            max-width: 280px !important;
+            text-align: center !important;
+            padding: 12px 0 !important;
+            border-bottom: 2px solid $color-border !important;
+
+            &--is-active {
+                border-bottom-color: $color-primary !important;
+                
+                &::after {
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    .shows__list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}

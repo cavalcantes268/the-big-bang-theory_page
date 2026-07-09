@@ -1,0 +1,20 @@
+{
+  "name": "clone-bazinga-plus",
+  "version": "1.0.0",
+  "description": "Streaming do The Big Bang Theory - Exercício BEM e Gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.70.0"
+  }
+}
